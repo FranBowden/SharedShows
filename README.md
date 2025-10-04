@@ -1,6 +1,6 @@
 # StreamOverlap
 
-**StreamOverlap** helps users discover which streaming titles are available in multiple countries. Compare Netflix catalogs across regions and find movies or shows that both users can watch, making it easy to plan watch nights with friends or family abroad.
+**StreamOverlap** helps users discover which streaming titles are available in multiple countries. Compare Netflix catalogs across regions and find movies or shows that both users can watch, making it easy to plan watch nights with friends or family abroad
 
 ---
 
@@ -18,9 +18,8 @@
 
 - **Frontend:** React + TypeScript
 - **Styling:** TailwindCSS
-- **Backend / API Proxy (optional):** Node.js + Express
+- **Backend:** Node.js + Express
 - **Data Source:** Watchmode API
-- **Deployment:** Vercel
 
 ---
 
@@ -34,7 +33,7 @@
 
 ## Future Improvements
 
-- Add support for more streaming platforms (Prime Video, Disney+, Hulu)
+- Add support for more streaming platforms (Prime Video, Disney+)
 - Save watchlists for users
 - Add user authentication for personalized experiences
 - Improve caching to reduce API requests and speed up filtering
