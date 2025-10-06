@@ -1,6 +1,6 @@
-# StreamOverlap
+# Shared Shows
 
-**StreamOverlap** helps users discover which streaming titles are available in multiple countries. Compare Netflix catalogs across regions and find movies or shows that both users can watch, making it easy to plan watch nights with friends or family abroad
+**Shared Shows** helps users discover which streaming titles are available in multiple countries. Compare Netflix catalogs across regions and find movies or shows that both users can watch, making it easy to plan watch nights with friends or family abroad
 
 ---
 
