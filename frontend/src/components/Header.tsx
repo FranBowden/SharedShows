@@ -2,11 +2,15 @@ import React from "react";
 
 export default function Header() {
   return (
-    <header className="bg-zinc-900 text-white shadow-md py-6 px-6 text-center">
-      <h1 className="text-3xl font-bold">Stream Overlap</h1>
-      <p className="text-gray-300 mt-2 text-sm">
-        Compare your streaming services and find shows in common
+    <div className="flex flex-col justify-center items-center text-center p-10 w-full h-full">
+      <h1 className="text-5xl md:text-7xl font-extrabold mb-4 leading-tight tracking-tight bg-clip-text text-transparent bg-gradient-to-t from-red-800 to-red-600 drop-shadow-xl">
+        Shared Shows
+      </h1>
+
+      <p className="text-gray-300 text-lg md:text-xl max-w-lg mt-2">
+        Compare your streaming services and discover shows you and your friends
+        both enjoy.
       </p>
-    </header>
+    </div>
   );
 }
