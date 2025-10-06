@@ -16,7 +16,7 @@ export default function FormCard() {
 
       <button
         type="submit"
-        className="mt-8 w-full rounded-2xl bg-gradient-to-r from-red-600 to-red-700 px-6 py-3 text-white font-semibold shadow-lg hover:from-red-700 hover:to-red-800 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-2 transition"
+        className="mt-8 w-full rounded-2xl bg-gradient-to-t from-red-800 to-red-600 drop-shadow-xl px-6 py-3 text-white font-semibold shadow-lg hover:from-red-800 hover:to-red-700 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-2 transition"
       >
         Find Overlap
       </button>
