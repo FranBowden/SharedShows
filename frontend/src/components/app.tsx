@@ -2,14 +2,15 @@ import React from "react";
 import DropdownList from "./DropDownCountryList";
 import DropDownServiceList from "./DropDownServicelist";
 import Header from "./Header";
+import Footer from "./Footer";
 
 export default function App() {
   return (
-    <div className="bg-zinc-800 min-h-screen">
+    <div className="flex flex-col min-h-screen bg-zinc-800">
       <Header />
 
-      <div className="flex justify-center m-10">
-        <form className="bg-zinc-900 shadow-lg rounded-2xl p-6 w-[28rem] max-h-fit">
+      <main className="flex-grow flex justify-center items-start py-10">
+        <form className="bg-zinc-900 shadow-lg rounded-2xl p-6 max-w-md w-full">
           <div className="grid grid-cols-2 gap-4">
             <DropdownList label="Choose a country:" id="country1" />
             <DropdownList label="Choose another:" id="country2" />
@@ -26,7 +27,9 @@ export default function App() {
             Submit
           </button>
         </form>
-      </div>
+      </main>
+
+      <Footer />
     </div>
   );
 }
