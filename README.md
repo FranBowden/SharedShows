@@ -36,3 +36,7 @@
 - Save watchlists for users
 - Add user authentication for personalized experiences
 - Improve caching to reduce API requests and speed up filtering
+
+## Credits
+
+- Data & API provided by [Watchmode](https://api.watchmode.com/)
