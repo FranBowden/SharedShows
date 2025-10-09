@@ -1,5 +1,5 @@
 import express from "express";
-import filmsRouter from "./routes/Films.ts";
+import filmsRouter from "./routes/Films";
 import cors from "cors";
 
 const app = express();
