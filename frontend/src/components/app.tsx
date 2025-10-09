@@ -4,7 +4,7 @@ import FormCard from "./FormCard";
 import Footer from "./Footer";
 import ShowDisplay from "./showDisplay";
 import Film from "../../../shared/Film";
-import CustomCursor from "./cursor";
+import CustomCursor from "./Cursor";
 import FallingPopcorn from "./Popcorn";
 
 export default function App() {
