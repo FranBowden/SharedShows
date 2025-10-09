@@ -16,6 +16,18 @@ export default function Footer() {
       </p>
       <span>|</span>
       <p>
+        Posters by{" "}
+        <a
+          href="https://www.themoviedb.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-red-500 hover:underline"
+        >
+          TMDB
+        </a>
+      </p>
+      <span>|</span>
+      <p>
         <a
           href="https://github.com/FranBowden/SharedShows"
           target="_blank"

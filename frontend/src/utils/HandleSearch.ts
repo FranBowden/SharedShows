@@ -1,5 +1,5 @@
 import { fetchFilms } from "../services/FetchFilms";
-import Film from "../../../SharedInterfaces/Film";
+import Film from "../../../shared/Film";
 
 import { CountriesProp } from "../../interfaces/CountryProp";
 export async function HandleButton({

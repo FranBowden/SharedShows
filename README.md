@@ -39,4 +39,6 @@
 
 ## Credits
 
-- Data & API provided by [Watchmode](https://api.watchmode.com/)
+- **Data & API** provided by [Watchmode](https://api.watchmode.com/)
+- **Posters** provided by [TMDB](https://www.themoviedb.org/)
+- **Popcorn icons** created by [Freepik](https://www.freepik.com) from [Flaticon](https://www.flaticon.com/free-icons/popcorn)

@@ -1,8 +1,8 @@
 import React, { Dispatch, SetStateAction, useState } from "react";
 import DropdownList from "./DropDownCountryList";
 import DropDownServiceList from "./DropDownServicelist";
-import { HandleButton } from "../utils/handleButtonLogic";
-import Film from "../../../SharedInterfaces/Film";
+import { HandleButton } from "../utils/HandleSearch";
+import Film from "../../../shared/Film";
 
 interface FormCardProps {
   setViewFilms: Dispatch<SetStateAction<boolean>>;
@@ -43,6 +43,10 @@ export default function FormCard({ setViewFilms, setFilms }: FormCardProps) {
         className="mt-8 w-full rounded-2xl bg-gradient-to-t from-red-800 to-red-600 drop-shadow-xl px-6 py-3 text-white font-semibold shadow-lg hover:from-red-800 hover:to-red-700 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-2 transition"
         onClick={async (e) => {
           e.preventDefault();
+
+          if (!country1 || !country2 || !service) return;
+          if (country1 == country2) return;
+
           setViewFilms(true);
 
           const films = await HandleButton({ country1, country2, service });

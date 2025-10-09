@@ -7,6 +7,7 @@ const router = express.Router();
 router.get("/", async (req, res) => {
   const country = req.query.country as string;
   const service = req.query.service as string;
+  //const page = req.query.page as number;
 
   if (!country || !service) {
     return res.status(400).json({ error: "country and service are required" });

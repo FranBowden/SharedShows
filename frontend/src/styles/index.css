@@ -1,1 +1,39 @@
 @import "tailwindcss";
+
+html,
+body,
+* {
+  cursor: none !important;
+}
+@keyframes shake {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-15deg);
+  }
+  50% {
+    transform: rotate(15deg);
+  }
+  75% {
+    transform: rotate(-15deg);
+  }
+}
+
+.cursor-shake {
+  animation: shake 0.3s ease-in-out;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+.fall {
+  animation: fall 2s linear forwards;
+}

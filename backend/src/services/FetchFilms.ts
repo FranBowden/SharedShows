@@ -1,6 +1,6 @@
 import "dotenv/config";
-import FilmsProp from "../../../SharedInterfaces/FilmsProp.ts";
-import Film from "../../../SharedInterfaces/Film.ts";
+import FilmsProp from "../../../shared/FilmsProp.ts";
+import Film from "../../../shared/Film.ts";
 const apiKey = process.env.WATCHMODE_API_KEY;
 const TMDB_API_KEY = process.env.TMDB_API_KEY;
 
@@ -51,11 +51,17 @@ export async function fetchFilms({
       throw new Error(`${response.status} ${response.statusText}`);
 
     const data: { titles: Film[] } = await response.json();
-    const films = data.titles.slice(0, 50); // limit to 50 for safety
+
+    const films = data.titles.slice(0, 36);
+
+    const filmsWithoutPosters: Film[] = films.map((film) => ({
+      ...film,
+      poster: film.poster || null,
+    }));
 
     const filmsWithPosters: Film[] = await Promise.all(
       films.map(async (film) => {
-        if (film.poster) return film; // already has poster from Watchmode
+        if (film.poster) return film;
 
         if (film.tmdb_id) {
           try {
