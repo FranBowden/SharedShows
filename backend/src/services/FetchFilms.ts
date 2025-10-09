@@ -1,6 +1,6 @@
 import "dotenv/config";
-import FilmsProp from "../../../shared/FilmsProp.ts";
-import Film from "../../../shared/Film.ts";
+import FilmsProp from "../../../shared/FilmsProp";
+import Film from "../../../shared/Film";
 const apiKey = process.env.WATCHMODE_API_KEY;
 const TMDB_API_KEY = process.env.TMDB_API_KEY;
 

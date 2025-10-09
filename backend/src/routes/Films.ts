@@ -1,6 +1,6 @@
 import express from "express";
 import "dotenv/config";
-import { fetchFilms } from "../services/FetchFilms.ts";
+import { fetchFilms } from "../services/FetchFilms";
 
 const router = express.Router();
 
