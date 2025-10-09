@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Header from "./Header";
 import FormCard from "./FormCard";
 import Footer from "./Footer";
-import ShowDisplay from "./showDisplay";
+import ShowDisplay from "./ShowDisplay";
 import Film from "../../../shared/Film";
 import CustomCursor from "./Cursor";
 import FallingPopcorn from "./Popcorn";
