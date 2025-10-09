@@ -1,6 +1,14 @@
 import React from "react";
 import { DropdownListProps } from "../../interfaces/DropDownListProp";
-export default function DropdownList({ label, id }: DropdownListProps) {
+export default function DropdownList({
+  label,
+  id,
+  setValue, //set country
+}: DropdownListProps) {
+  const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setValue(e.target.value); //Set country
+  };
+
   return (
     <div className="w-full">
       <label
@@ -12,7 +20,9 @@ export default function DropdownList({ label, id }: DropdownListProps) {
       <select
         id={id}
         name={id}
+        required
         className="w-full rounded-xl border border-zinc-600 bg-zinc-800 px-4 py-2 text-zinc-200 shadow-sm focus:border-red-500 focus:ring focus:ring-red-400 focus:ring-opacity-50 transition"
+        onChange={handleChange}
       >
         <option value="">--Select--</option>
         <option value="Australia">Australia</option>
