@@ -2,6 +2,7 @@ import "dotenv/config";
 import FilmsProp from "../../../SharedInterfaces/FilmsProp.ts";
 import Film from "../../../SharedInterfaces/Film.ts";
 const apiKey = process.env.WATCHMODE_API_KEY;
+const TMDB_API_KEY = process.env.TMDB_API_KEY;
 
 function getCountryCode(country: string): string {
   switch (country) {
@@ -36,23 +37,46 @@ function getServiceCode(service: string): string {
       return "";
   }
 }
-
-export async function fetchFilms({ country, service }: FilmsProp) {
+export async function fetchFilms({
+  country,
+  service,
+}: FilmsProp): Promise<Film[]> {
   try {
     const code = getCountryCode(country);
     const id = getServiceCode(service);
     const url = `https://api.watchmode.com/v1/list-titles/?apiKey=${apiKey}&regions=${code}&source_ids=${id}&page=1`;
 
     const response = await fetch(url);
+    if (!response.ok)
+      throw new Error(`${response.status} ${response.statusText}`);
 
-    if (!response.ok) {
-      throw new Error(
-        `Response Not OK: ${response.status} ${response.statusText}`
-      );
-    }
-    const data: Film[] = await response.json();
+    const data: { titles: Film[] } = await response.json();
+    const films = data.titles.slice(0, 50); // limit to 50 for safety
 
-    return data;
+    const filmsWithPosters: Film[] = await Promise.all(
+      films.map(async (film) => {
+        if (film.poster) return film; // already has poster from Watchmode
+
+        if (film.tmdb_id) {
+          try {
+            const type = film.tmdb_type === "tv" ? "tv" : "movie";
+            const tmdbUrl = `https://api.themoviedb.org/3/${type}/${film.tmdb_id}?api_key=${TMDB_API_KEY}`;
+            const tmdbData = await fetch(tmdbUrl).then((res) => res.json());
+            return {
+              ...film,
+              poster: tmdbData.poster_path
+                ? `https://image.tmdb.org/t/p/w500${tmdbData.poster_path}`
+                : null,
+            };
+          } catch {
+            return { ...film, poster: null };
+          }
+        }
+        return { ...film, poster: null };
+      })
+    );
+
+    return filmsWithPosters;
   } catch (e) {
     console.error("Error: ", e);
     return [];

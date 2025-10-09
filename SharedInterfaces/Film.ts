@@ -3,6 +3,7 @@ export default interface Film {
   title: string;
   year: number;
   type: string;
+  tmdb_type: string;
   tmdb_id?: number;
   poster?: string | null;
 }
