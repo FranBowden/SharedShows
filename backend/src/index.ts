@@ -1,5 +1,5 @@
 import express from "express";
-import filmsRouter from "./routes/Films";
+import filmsRouter from "./routes/Films.ts";
 import cors from "cors";
 import { VercelRequest, VercelResponse } from "@vercel/node";
 const app = express();
