@@ -2,8 +2,8 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <footer className="bg-zinc-900 text-gray-400 text-center py-4 text-sm border-t border-zinc-800 flex flex-col md:flex-row justify-center items-center gap-2 md:gap-4">
-      <p>
+    <footer className="bg-zinc-900 text-gray-400 py-4 text-sm border-t border-zinc-800 flex flex-col sm:flex-row justify-center items-center gap-2 sm:gap-4 text-center px-4">
+      <p className="flex flex-wrap justify-center items-center gap-1">
         Data provided by{" "}
         <a
           href="https://www.watchmode.com/"
@@ -14,8 +14,10 @@ export default function Footer() {
           Watchmode
         </a>
       </p>
-      <span>|</span>
-      <p>
+
+      <span className="hidden sm:inline">|</span>
+
+      <p className="flex flex-wrap justify-center items-center gap-1">
         Posters by{" "}
         <a
           href="https://www.themoviedb.org/"
@@ -26,8 +28,10 @@ export default function Footer() {
           TMDB
         </a>
       </p>
-      <span>|</span>
-      <p>
+
+      <span className="hidden sm:inline">|</span>
+
+      <p className="flex flex-wrap justify-center items-center gap-1">
         <a
           href="https://github.com/FranBowden/SharedShows"
           target="_blank"
