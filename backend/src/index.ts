@@ -5,25 +5,36 @@ import { VercelRequest, VercelResponse } from "@vercel/node";
 
 const app = express();
 
-// CORS configuration
-const corsOptions = {
-  origin: process.env.VITE_API_URL || "http://localhost:3000",
-  methods: ["GET", "POST"],
-};
-app.use(cors(corsOptions));
+// ✅ Configure CORS properly
+const allowedOrigins = [
+  "http://localhost:3000",
+  "https://shared-shows.vercel.app",
+];
 
-app.use(express.json());
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+  })
+);
+
 app.use("/films", filmsRouter);
 
-// --- Local development ---
-if (process.env.NODE_ENV !== "production") {
-  const PORT = process.env.PORT || 3000;
+// ✅ Allow both local & Vercel environments
+if (process.env.VERCEL === undefined) {
+  // Local mode
+  const PORT = 3000;
   app.listen(PORT, () => {
     console.log(`Server running locally at http://localhost:${PORT}`);
   });
+} else {
+  // Deployed mode
+  export default (req: VercelRequest, res: VercelResponse) => {
+    app(req, res);
+  };
 }
-
-// --- Vercel serverless handler ---
-export default (req: VercelRequest, res: VercelResponse) => {
-  app(req, res);
-};
