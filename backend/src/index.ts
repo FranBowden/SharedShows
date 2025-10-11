@@ -5,7 +5,7 @@ import { VercelRequest, VercelResponse } from "@vercel/node";
 
 const app = express();
 
-// ✅ Configure CORS properly
+// ✅ Allow both local and production origins
 const allowedOrigins = [
   "http://localhost:3000",
   "https://shared-shows.vercel.app",
@@ -25,16 +25,15 @@ app.use(
 
 app.use("/films", filmsRouter);
 
-// ✅ Allow both local & Vercel environments
-if (process.env.VERCEL === undefined) {
-  // Local mode
+// ✅ Local dev mode
+if (!process.env.VERCEL) {
   const PORT = 3000;
   app.listen(PORT, () => {
     console.log(`Server running locally at http://localhost:${PORT}`);
   });
-} else {
-  // Deployed mode
-  export default (req: VercelRequest, res: VercelResponse) => {
-    app(req, res);
-  };
+}
+
+// ✅ Always export for Vercel
+export default function handler(req: VercelRequest, res: VercelResponse) {
+  app(req, res);
 }
