@@ -5,7 +5,6 @@ import Footer from "./Footer";
 import ShowDisplay from "./ShowDisplay";
 import Film from "../../../shared/Film";
 import CustomCursor from "./Cursor";
-import FallingPopcorn from "./Popcorn";
 
 export default function App() {
   const [viewFilms, setViewFilms] = useState(false);
@@ -35,8 +34,6 @@ export default function App() {
           </div>
         )}
       </div>
-
-      <FallingPopcorn />
       <CustomCursor />
       <Footer />
     </div>
