@@ -7,7 +7,7 @@ const app = express();
 
 // CORS configuration
 const corsOptions = {
-  origin: process.env.FRONTEND_ORIGIN || "http://localhost:5173", // adjust if using React/Vite locally
+  origin: process.env.VITE_API_URL || "http://localhost:3000",
   methods: ["GET", "POST"],
 };
 app.use(cors(corsOptions));
