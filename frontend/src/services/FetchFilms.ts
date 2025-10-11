@@ -4,12 +4,11 @@ import Film from "../../../shared/Film";
 export async function fetchFilms({
   country,
   service,
-  page,
 }: FilmsProp): Promise<Film[]> {
   try {
     const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
     const res = await fetch(
-      `${API_URL}/films?country=${country}&service=${service}&page=${page}`
+      `${API_URL}/films?country=${country}&service=${service}&page=1`
     );
 
     if (!res.ok) {
