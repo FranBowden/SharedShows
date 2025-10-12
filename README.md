@@ -6,13 +6,13 @@
 
 ## Features
 
-- Compare Netflix, Prime, or Disney catalogs across two countries
-- Filter by movies or TV shows
-- Display detailed information: title, description, year, poster
-- Clean and responsive UI for easy browsing
-- Built using **Watchmode API** to provide accurate streaming availability
+- Compare Netflix, Prime Video, or Disney+ catalogs across two countries  
+- Filter by movies or TV shows  
+- Display detailed information: title, description, year, and poster  
+- Clean, responsive UI for easy browsing  
+- Built using the **Watchmode API** for accurate streaming availability  
+- Posters fetched from the **TMDB API**
 
----
 
 ## Tech Stack
 
@@ -21,7 +21,6 @@
 - **Backend:** Node.js + Express
 - **Data Source:** Watchmode API
 
----
 
 ## Usage
 
@@ -29,7 +28,6 @@
 2. Browse the list of shared titles available
 3. Click a title to see more details
 
----
 
 ## Future Improvements
 
@@ -39,7 +37,8 @@
 
 ## Credits
 
-- **Data & API** provided by [Watchmode](https://api.watchmode.com/)
-- **Posters** provided by [TMDB](https://www.themoviedb.org/)
-- **Popcorn icons** created by [Freepik](https://www.freepik.com) from [Flaticon](https://www.flaticon.com/free-icons/popcorn)
-  <a href="https://www.flaticon.com/free-icons/cursor" title="cursor icons">Cursor icons created by Icon Hubs - Flaticon</a>
+- **Data & API:** [Watchmode](https://api.watchmode.com/)  
+- **Posters:** [TMDB (The Movie Database)](https://www.themoviedb.org/)  
+- **Popcorn Icons:** Created by [Freepik](https://www.freepik.com) from [Flaticon](https://www.flaticon.com/free-icons/popcorn)  
+- **Mouse Cursor:** Created by [Icon Hubs](https://www.flaticon.com/free-icons/cursor) from [Flaticon](https://www.flaticon.com)
+
